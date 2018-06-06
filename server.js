@@ -26,9 +26,9 @@ app.use((req, res, next)=>{
 next();
 });
 //se usa de acuerdo al orden escrito
-app.use((req,res,next)=>{
-  res.render('maintenance.hbs')
-});
+// app.use((req,res,next)=>{
+//   res.render('maintenance.hbs')
+// });
 //agregar algo a middleware
 //express.static take absolute path
 //encadena el server configurado ara que inicie
@@ -56,6 +56,12 @@ app.get('/about',(req, res)=>{
     pageTitle: 'About Page'
   });
   // res.render('about.hbs')
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects'
+  });
 });
 
 app.get('/bad',(req, res)=>{
